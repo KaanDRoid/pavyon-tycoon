@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://nfo2c4ygnfd2"]
+
+[ext_resource type="Script" uid="uid://drg1mkd5bkrbf" path="res://src/Core/GameManager.cs" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://bfwgncja7rim2" path="res://src/Core/TimeManager.cs" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://cr157e2enb5lh" path="res://src/Economy/EconomyManager.cs" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://dshc017b8qqmq" path="res://src/Furniture/FurnitureManager.cs" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://ct06lmyoso2tk" path="res://src/Staff/StaffManager.cs" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://d2elqcfvdicmb" path="res://src/Customers/CustomerManager.cs" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://copw8moo57jxb" path="res://scenes/UI/FurnitureUI.tscn" id="5_tbgi4"]
+
+[node name="Main" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_sugp2")
+
+[node name="TimeManager" type="Node" parent="GameManager"]
+script = ExtResource("2_jyhfs")
+
+[node name="EconomyManager" type="Node" parent="GameManager"]
+script = ExtResource("3_tbgi4")
+
+[node name="StaffManager" type="Node" parent="GameManager"]
+script = ExtResource("4_o6xl0")
+
+[node name="CustomerManager" type="Node" parent="GameManager"]
+script = ExtResource("4_tefeu")
+
+[node name="EventManager" type="Node" parent="GameManager"]
+
+[node name="FurnitureManager" type="Node" parent="GameManager"]
+script = ExtResource("4_jyhfs")
+
+[node name="ReputationManager" type="Node" parent="GameManager"]
+
+[node name="IllegalActivitiesManager" type="Node" parent="GameManager"]
+
+[node name="FurnitureUi" parent="." instance=ExtResource("5_tbgi4")]
