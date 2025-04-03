@@ -124,7 +124,7 @@ namespace PavyonTycoon.UI.Staff
 		}
 		
 		/// <summary>
-		/// Tüm panelleri gizler
+		/// Tüm panelleri gizler inş
 		/// </summary>
 		private void HideAllPanels()
 		{
