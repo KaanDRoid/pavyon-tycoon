@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3cmol28gpvev"]
+[gd_scene load_steps=3 format=3 uid="uid://b3cmol28gpvev"]
+
+[ext_resource type="Script" uid="uid://cd466xlevn5s" path="res://src/UI/Staff/StaffManagementUI.cs" id="1_s6tjh"]
 
 [sub_resource type="Theme" id="Theme_uln5h"]
 
@@ -11,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_s6tjh")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -45,7 +48,13 @@ theme_override_colors/font_color = Color(0.941176, 0.815686, 0.501961, 1)
 theme_override_font_sizes/font_size = 18
 
 [node name="CloseButton" type="Button" parent="Background/VBoxContainer/TitleBar"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(1, 0.333333, 0.333333, 1)
 text = "X"
+
+[node name="TabContainer" type="TabContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Background/VBoxContainer/TitleBar/CloseButton" to="." method="_on_close_button_pressed"]
